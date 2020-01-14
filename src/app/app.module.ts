@@ -6,7 +6,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './home/login.component';
 
 import { ChatAppModule } from './chat-app/chat-app.module';
 import { RoutingModule } from './routing.module';
@@ -18,7 +18,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import Amplify from 'aws-amplify';
 import aws_exports from '../aws-exports';
 import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
-import { LoginComponent } from './login/login.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserAuthGuard } from './authguard.service';
 Amplify.configure(aws_exports);
 
 @NgModule({
@@ -26,12 +28,12 @@ Amplify.configure(aws_exports);
     AppComponent,
     NavComponent,
     FooterComponent,
-    HomeComponent,
-    LoginComponent
+    SidebarComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    ChatAppModule.forRoot(),
     RoutingModule,
     FormsModule,
     NgbModule.forRoot(),
@@ -39,7 +41,8 @@ Amplify.configure(aws_exports);
     AmplifyAngularModule
   ],
   providers: [
-    AmplifyService
+    AmplifyService,
+    UserAuthGuard
   ],
   bootstrap: [AppComponent]
 })
