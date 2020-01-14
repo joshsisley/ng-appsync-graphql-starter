@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"nggraphqldashboard3ece2a67": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}

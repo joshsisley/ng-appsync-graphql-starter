@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-ng-graphql-dashboard-dev-83401-authRole",
+            "UnauthRoleArn": "arn:aws:iam::201538105556:role/amplify-ng-graphql-dashboard-dev-83401-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::201538105556:role/amplify-ng-graphql-dashboard-dev-83401-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-ng-graphql-dashboard-dev-83401-deployment",
+            "UnauthRoleName": "amplify-ng-graphql-dashboard-dev-83401-unauthRole",
+            "StackName": "amplify-ng-graphql-dashboard-dev-83401",
+            "StackId": "arn:aws:cloudformation:us-east-1:201538105556:stack/amplify-ng-graphql-dashboard-dev-83401/5d583990-3609-11ea-bc32-129cd46a326a",
+            "AmplifyAppId": "d37tp2xh2oe0p1"
+        },
+        "categories": {
+            "auth": {
+                "nggraphqldashboard3ece2a67": {}
+            }
+        }
+    }
+}
