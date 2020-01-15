@@ -77,7 +77,8 @@ export class ChatUserListComponent {
 
       const userConvos = client.readQuery(options);
       const path = 'me.conversations.userConversations';
-      const userConvo = _.chain(userConvos).get(path).find(c => _.some(c.associated, ['userId', user.id])).value();
+      // const userConvo = _.chain(userConvos).get(path).find(c => _.some(c.associated, ['userId', user.id])).value();
+      const userConvo = null;
 
       if (userConvo) {
         return this.onNewConvo.emit(userConvo.conversation);

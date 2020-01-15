@@ -3,10 +3,10 @@ import { AmplifyService } from 'aws-amplify-angular';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
+  selector: 'app-login',
+  templateUrl: './login.component.html',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 

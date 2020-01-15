@@ -8,7 +8,6 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './home/login.component';
 
-import { ChatAppModule } from './chat-app/chat-app.module';
 import { RoutingModule } from './routing.module';
 
 import { environment } from '../environments/environment';
