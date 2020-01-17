@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../../shared/API.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-clients',
@@ -9,7 +10,7 @@ import { APIService } from '../../shared/API.service';
 export class ClientsComponent implements OnInit {
     clientList: {}[];
 
-    constructor(private api: APIService) { }
+    constructor(private api: APIService, private router: Router) { }
 
     ngOnInit() {
         this.getAllUsers();
@@ -22,5 +23,11 @@ export class ClientsComponent implements OnInit {
             this.clientList = list.items;
             console.log(this.clientList);
         })
+    }
+
+    goToClient(clientData) {
+        console.log('is called');
+        console.log(clientData)
+        this.router.navigate(['/users/profile', clientData.id])
     }
 }

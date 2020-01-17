@@ -21,7 +21,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let client of clientList">
+                <tr *ngFor="let client of clientList" (click)="goToClient(client)">
                   <th scope="row">
                     <div class="media align-items-center"><a
                         class="avatar rounded-circle mr-3" href="javascript:void(0)"><img

@@ -9,11 +9,17 @@ export class UserAuthGuard implements CanActivate {
 
   canActivate() {
     console.log('AuthGuard#canActivate called');
-    return this.amplifyService.auth().currentAuthenticatedUser()
-      .then(user => true)
+    return this.amplifyService.auth().currentUserInfo().then(user => {
+        if (user.attributes['custom:orgId']) {
+          return true;
+        } else {
+          this.router.navigate(['/register']);
+          return false;
+        }
+      })
       .catch(err => {
         this.router.navigate(['/login']);
         return false;
-    });
-   }
+      })
+    }
 }

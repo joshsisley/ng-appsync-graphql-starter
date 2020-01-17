@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent { 
   isLoggedIn = false;
+  isRegistered = false;
 
   constructor(private amplifyService: AmplifyService, public router: Router) {
     this.amplifyService.authStateChange$.subscribe(authState => {
@@ -18,6 +19,9 @@ export class AppComponent {
         router.navigate(['/']);
       }
       this.isLoggedIn = isLoggedIn;
+      this.amplifyService.auth().currentUserInfo().then((currentUser) => {
+        this.isRegistered = currentUser && currentUser.attributes['custom:orgId'] ? true : false;
+      })
     });
   }
 

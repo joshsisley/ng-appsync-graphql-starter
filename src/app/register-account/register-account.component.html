@@ -1,0 +1,89 @@
+<div class="bg-default register-container" [ngClass]="{'full-height': !accountType.length}">
+  <div class="header bg-gradient-danger py-7 py-lg-8">
+    <div class="separator separator-bottom separator-skew zindex-100"><svg preserveAspectRatio="none" version="1.1"
+        viewBox="0 0 2560 100" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+        <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+      </svg></div>
+  </div>
+  <div class="container login-container mt--8 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="card bg-secondary shadow border-0">
+          <div class="card-header bg-transparent pb-5">
+            <div class="text-muted text-center mt-2 mb-4"><small>Who is this account for?</small>
+            </div>
+            <div class="text-center">
+              <a class="btn btn-neutral btn-icon mr-4" [ngClass]="{'btn-active': accountType === 'individual'}"
+                (click)="accountType = 'individual'"><span class="btn-inner--text">Individual</span></a>
+              <a class="btn btn-neutral btn-icon" [ngClass]="{'btn-active': accountType === 'business'}"
+                (click)="accountType = 'business'"><span class="btn-inner--text">Business</span></a>
+            </div>
+          </div>
+          <div *ngIf="accountType.length" class="card-body px-lg-5 py-lg-5">
+            <!-- <div class="text-center text-muted mb-4"><small>Or sign up with
+                credentials</small></div> -->
+            <form novalidate="" role="form" class="ng-untouched ng-pristine ng-valid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                      </div><input class="form-control" placeholder="Full Name" type="text" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                      </div><input class="form-control" placeholder="Address 1" type="text" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                      </div><input class="form-control" placeholder="Address 2" type="text" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend"><span class="input-group-text"><i
+                            class="ni ni-email-83"></i></span>
+                      </div><input class="form-control" placeholder="City" type="text" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend"><span class="input-group-text"><i
+                            class="ni ni-email-83"></i></span>
+                      </div><input class="form-control" placeholder="State" type="text" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend"><span class="input-group-text"><i
+                            class="ni ni-email-83"></i></span>
+                      </div><input class="form-control" placeholder="Zipcode" type="text" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div _ngcontent-c7="" class="text-center"><button _ngcontent-c7="" class="btn btn-primary mt-4"
+                  type="button" (click)="submit()">Create Account</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

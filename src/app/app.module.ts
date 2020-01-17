@@ -21,6 +21,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAuthGuard } from './authguard.service';
 import { SharedModule } from './shared/shared.module';
+import { RegisterAccountComponent } from './register-account/register-account.component';
 Amplify.configure(aws_exports);
 
 @NgModule({
@@ -29,7 +30,8 @@ Amplify.configure(aws_exports);
     FooterComponent,
     SidebarComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterAccountComponent
   ],
   imports: [
     BrowserModule,

@@ -76,3 +76,20 @@
         display: none !important;
     }
 }
+
+.full-height {
+    position: absolute;
+}
+
+.register-container {
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.btn-active {
+    background: $primary !important;
+    border-color: $primary !important;
+    color: white !important;
+}
