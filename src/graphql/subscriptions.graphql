@@ -1,0 +1,76 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateClient(
+  $id: String
+  $firstName: String
+  $lastName: String
+  $email: String
+  $phone: String
+) {
+  onCreateClient(
+    id: $id
+    firstName: $firstName
+    lastName: $lastName
+    email: $email
+    phone: $phone
+  ) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    cognitoId
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateClient(
+  $id: String
+  $firstName: String
+  $lastName: String
+  $email: String
+  $phone: String
+) {
+  onUpdateClient(
+    id: $id
+    firstName: $firstName
+    lastName: $lastName
+    email: $email
+    phone: $phone
+  ) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    cognitoId
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteClient(
+  $id: String
+  $firstName: String
+  $lastName: String
+  $email: String
+  $phone: String
+) {
+  onDeleteClient(
+    id: $id
+    firstName: $firstName
+    lastName: $lastName
+    email: $email
+    phone: $phone
+  ) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    cognitoId
+    status
+    createdAt
+    updatedAt
+  }
+}

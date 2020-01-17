@@ -1,0 +1,38 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h6 class="modal-title" id="modal-title-default">Modal title</h6>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="userForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input class="form-control" placeholder="First Name" formControlName="firstName" type="text" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input class="form-control" placeholder="Last Name" formControlName="lastName" type="text" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input class="form-control" placeholder="Email" formControlName="email" type="email" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input class="form-control" placeholder="Phone" formControlName="phone" type="tel" />
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+    <button type="button" (click)="onSubmit(userForm.value)" class="btn btn-primary">Save</button>
+  </div>
+</div>

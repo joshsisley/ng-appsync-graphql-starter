@@ -1,0 +1,40 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateClient($input: CreateClientInput!) {
+  createClient(input: $input) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    cognitoId
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateClient($input: UpdateClientInput!) {
+  updateClient(input: $input) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    cognitoId
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteClient($input: DeleteClientInput!) {
+  deleteClient(input: $input) {
+    id
+    firstName
+    lastName
+    email
+    phone
+    cognitoId
+    status
+    createdAt
+    updatedAt
+  }
+}

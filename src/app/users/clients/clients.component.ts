@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../../shared/API.service';
 
 @Component({
     selector: 'app-clients',
@@ -6,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ClientsComponent implements OnInit {
-    constructor() { }
+    clientList: {}[];
 
-    ngOnInit() { }
+    constructor(private api: APIService) { }
+
+    ngOnInit() {
+        this.getAllUsers();
+     }
+
+    getAllUsers() {
+        this.api.ListClients().then(list => {
+            console.log('here is the list of clients');
+            console.log(list);
+            this.clientList = list.items;
+            console.log(this.clientList);
+        })
+    }
 }
