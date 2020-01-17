@@ -20,12 +20,12 @@ import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAuthGuard } from './authguard.service';
+import { SharedModule } from './shared/shared.module';
 Amplify.configure(aws_exports);
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
     FooterComponent,
     SidebarComponent,
     LoginComponent,
@@ -35,6 +35,7 @@ Amplify.configure(aws_exports);
     BrowserModule,
     RoutingModule,
     FormsModule,
+    SharedModule,
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AmplifyAngularModule

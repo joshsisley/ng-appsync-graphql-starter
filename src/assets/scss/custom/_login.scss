@@ -59,3 +59,20 @@
     font-size: 0.875rem !important;
     margin-top: 1rem !important;
 }
+
+.amplify-alert {
+    color: #f5365c !important;
+    width: 100%;
+    display: inline-block;
+    .amplify-alert-message {
+        float: left !important;
+        font-size: 0.875rem !important;
+        margin-top: 0.5rem !important;
+    }
+    .amplify-alert-close {
+        display: none !important;
+    }
+    .amplify-alert-icon {
+        display: none !important;
+    }
+}
