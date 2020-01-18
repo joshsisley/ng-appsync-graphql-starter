@@ -7,6 +7,7 @@ import { RegisterAccountComponent } from './register-account/register-account.co
 
 const routes: Routes = [
   { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)},
+  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterAccountComponent },
   { path: '', component: DashboardComponent,  canActivate: [UserAuthGuard]}

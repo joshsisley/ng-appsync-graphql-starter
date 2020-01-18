@@ -38,3 +38,36 @@ mutation DeleteClient($input: DeleteClientInput!) {
     updatedAt
   }
 }
+mutation CreateOrg($input: CreateOrgInput!) {
+  createOrg(input: $input) {
+    id
+    name
+    address1
+    address2
+    city
+    state
+    zip
+  }
+}
+mutation UpdateOrg($input: UpdateOrgInput!) {
+  updateOrg(input: $input) {
+    id
+    name
+    address1
+    address2
+    city
+    state
+    zip
+  }
+}
+mutation DeleteOrg($input: DeleteOrgInput!) {
+  deleteOrg(input: $input) {
+    id
+    name
+    address1
+    address2
+    city
+    state
+    zip
+  }
+}

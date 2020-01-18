@@ -7,10 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APIService } from './API.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
-    exports: [NavComponent, UserModalComponent, SidebarComponent],
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, NgbModule],
+    exports: [NavComponent, UserModalComponent, SidebarComponent, NgbModule],
     declarations: [NavComponent, UserModalComponent, SidebarComponent],
     providers: [APIService],
 })

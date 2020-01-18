@@ -12,6 +12,8 @@ export type CreateClientInput = {
   phone?: string | null;
   cognitoId?: string | null;
   status?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
 };
 
 export type UpdateClientInput = {
@@ -22,9 +24,35 @@ export type UpdateClientInput = {
   phone?: string | null;
   cognitoId?: string | null;
   status?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
 };
 
 export type DeleteClientInput = {
+  id: string;
+};
+
+export type CreateOrgInput = {
+  id: string | null;
+  name: string;
+  address1?: string | null;
+  address2?: string | null;
+  city?: string | null;
+  state?: string | null;
+  zip?: string | null;
+};
+
+export type UpdateOrgInput = {
+  id: string;
+  name?: string | null;
+  address1?: string | null;
+  address2?: string | null;
+  city?: string | null;
+  state?: string | null;
+  zip?: string | null;
+};
+
+export type DeleteOrgInput = {
   id: string;
 };
 
@@ -51,6 +79,16 @@ export type TableStringFilterInput = {
   beginsWith?: string | null;
 };
 
+export type TableOrgFilterInput = {
+  id?: TableStringFilterInput | null;
+  name?: TableStringFilterInput | null;
+  address1?: TableStringFilterInput | null;
+  address2?: TableStringFilterInput | null;
+  city?: TableStringFilterInput | null;
+  state?: TableStringFilterInput | null;
+  zip?: TableStringFilterInput | null;
+};
+
 export type CreateClientMutation = {
   __typename: "Client";
   id: string;
@@ -60,8 +98,8 @@ export type CreateClientMutation = {
   phone: string | null;
   cognitoId: string | null;
   status: string | null;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | null;
+  updatedAt: string | null;
 };
 
 export type UpdateClientMutation = {
@@ -73,8 +111,8 @@ export type UpdateClientMutation = {
   phone: string | null;
   cognitoId: string | null;
   status: string | null;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | null;
+  updatedAt: string | null;
 };
 
 export type DeleteClientMutation = {
@@ -86,8 +124,41 @@ export type DeleteClientMutation = {
   phone: string | null;
   cognitoId: string | null;
   status: string | null;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | null;
+  updatedAt: string | null;
+};
+
+export type CreateOrgMutation = {
+  __typename: "Org";
+  id: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
+};
+
+export type UpdateOrgMutation = {
+  __typename: "Org";
+  id: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
+};
+
+export type DeleteOrgMutation = {
+  __typename: "Org";
+  id: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
 };
 
 export type GetClientQuery = {
@@ -99,8 +170,8 @@ export type GetClientQuery = {
   phone: string | null;
   cognitoId: string | null;
   status: string | null;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | null;
+  updatedAt: string | null;
 };
 
 export type ListClientsQuery = {
@@ -114,8 +185,34 @@ export type ListClientsQuery = {
     phone: string | null;
     cognitoId: string | null;
     status: string | null;
-    createdAt: string;
-    updatedAt: string;
+    createdAt: string | null;
+    updatedAt: string | null;
+  } | null> | null;
+  nextToken: string | null;
+};
+
+export type GetOrgQuery = {
+  __typename: "Org";
+  id: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
+};
+
+export type ListOrgsQuery = {
+  __typename: "OrgConnection";
+  items: Array<{
+    __typename: "Org";
+    id: string;
+    name: string;
+    address1: string | null;
+    address2: string | null;
+    city: string | null;
+    state: string | null;
+    zip: string | null;
   } | null> | null;
   nextToken: string | null;
 };
@@ -129,8 +226,8 @@ export type OnCreateClientSubscription = {
   phone: string | null;
   cognitoId: string | null;
   status: string | null;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | null;
+  updatedAt: string | null;
 };
 
 export type OnUpdateClientSubscription = {
@@ -142,8 +239,8 @@ export type OnUpdateClientSubscription = {
   phone: string | null;
   cognitoId: string | null;
   status: string | null;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | null;
+  updatedAt: string | null;
 };
 
 export type OnDeleteClientSubscription = {
@@ -155,8 +252,41 @@ export type OnDeleteClientSubscription = {
   phone: string | null;
   cognitoId: string | null;
   status: string | null;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | null;
+  updatedAt: string | null;
+};
+
+export type OnCreateOrgSubscription = {
+  __typename: "Org";
+  id: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
+};
+
+export type OnUpdateOrgSubscription = {
+  __typename: "Org";
+  id: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
+};
+
+export type OnDeleteOrgSubscription = {
+  __typename: "Org";
+  id: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
+  zip: string | null;
 };
 
 @Injectable({
@@ -232,6 +362,69 @@ export class APIService {
     )) as any;
     return <DeleteClientMutation>response.data.deleteClient;
   }
+  async CreateOrg(input: CreateOrgInput): Promise<CreateOrgMutation> {
+    const statement = `mutation CreateOrg($input: CreateOrgInput!) {
+        createOrg(input: $input) {
+          __typename
+          id
+          name
+          address1
+          address2
+          city
+          state
+          zip
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateOrgMutation>response.data.createOrg;
+  }
+  async UpdateOrg(input: UpdateOrgInput): Promise<UpdateOrgMutation> {
+    const statement = `mutation UpdateOrg($input: UpdateOrgInput!) {
+        updateOrg(input: $input) {
+          __typename
+          id
+          name
+          address1
+          address2
+          city
+          state
+          zip
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateOrgMutation>response.data.updateOrg;
+  }
+  async DeleteOrg(input: DeleteOrgInput): Promise<DeleteOrgMutation> {
+    const statement = `mutation DeleteOrg($input: DeleteOrgInput!) {
+        deleteOrg(input: $input) {
+          __typename
+          id
+          name
+          address1
+          address2
+          city
+          state
+          zip
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteOrgMutation>response.data.deleteOrg;
+  }
   async GetClient(id: string): Promise<GetClientQuery> {
     const statement = `query GetClient($id: String!) {
         getClient(id: $id) {
@@ -293,6 +486,63 @@ export class APIService {
     )) as any;
     return <ListClientsQuery>response.data.listClients;
   }
+  async GetOrg(id: string): Promise<GetOrgQuery> {
+    const statement = `query GetOrg($id: String!) {
+        getOrg(id: $id) {
+          __typename
+          id
+          name
+          address1
+          address2
+          city
+          state
+          zip
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetOrgQuery>response.data.getOrg;
+  }
+  async ListOrgs(
+    filter?: TableOrgFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListOrgsQuery> {
+    const statement = `query ListOrgs($filter: TableOrgFilterInput, $limit: Int, $nextToken: String) {
+        listOrgs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            name
+            address1
+            address2
+            city
+            state
+            zip
+          }
+          nextToken
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListOrgsQuery>response.data.listOrgs;
+  }
   OnCreateClientListener: Observable<OnCreateClientSubscription> = API.graphql(
     graphqlOperation(
       `subscription OnCreateClient($id: String, $firstName: String, $lastName: String, $email: String, $phone: String) {
@@ -349,4 +599,55 @@ export class APIService {
       }`
     )
   ) as Observable<OnDeleteClientSubscription>;
+
+  OnCreateOrgListener: Observable<OnCreateOrgSubscription> = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateOrg($id: String, $name: String, $address1: String, $address2: String, $city: String) {
+        onCreateOrg(id: $id, name: $name, address1: $address1, address2: $address2, city: $city) {
+          __typename
+          id
+          name
+          address1
+          address2
+          city
+          state
+          zip
+        }
+      }`
+    )
+  ) as Observable<OnCreateOrgSubscription>;
+
+  OnUpdateOrgListener: Observable<OnUpdateOrgSubscription> = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateOrg($id: String, $name: String, $address1: String, $address2: String, $city: String) {
+        onUpdateOrg(id: $id, name: $name, address1: $address1, address2: $address2, city: $city) {
+          __typename
+          id
+          name
+          address1
+          address2
+          city
+          state
+          zip
+        }
+      }`
+    )
+  ) as Observable<OnUpdateOrgSubscription>;
+
+  OnDeleteOrgListener: Observable<OnDeleteOrgSubscription> = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteOrg($id: String, $name: String, $address1: String, $address2: String, $city: String) {
+        onDeleteOrg(id: $id, name: $name, address1: $address1, address2: $address2, city: $city) {
+          __typename
+          id
+          name
+          address1
+          address2
+          city
+          state
+          zip
+        }
+      }`
+    )
+  ) as Observable<OnDeleteOrgSubscription>;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AmplifyService } from 'aws-amplify-angular';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { APIService } from '../shared/API.service';
 
 @Component({
     selector: 'register-account',
@@ -14,7 +15,7 @@ export class RegisterAccountComponent implements OnInit {
     loading: boolean = true;
     registerForm;
 
-    constructor(private amplify: AmplifyService, private fb: FormBuilder, private router: Router) { 
+    constructor(private amplify: AmplifyService, private fb: FormBuilder, private router: Router, private Api: APIService) { 
         this.registerForm = this.fb.group({
             name: new FormControl(''),
             address1: new FormControl(''),
@@ -33,18 +34,23 @@ export class RegisterAccountComponent implements OnInit {
         })
     }
 
-    submit() {
+    submit(orgData) {
         // Save the org to the db and update the cognito user
         // Update the cognito user
-        let attrs = this.currentUser.attributes;
-        attrs['custom:orgId'] = '324234lkj324kjl234';
-        this.amplify.auth().updateUserAttributes(this.currentUser, attrs).then((user) => {
-            if (user) {
-                console.log('updated');
-                this.router.navigate(['/']);
-            } else {
-                // display error to user
-            }
+        console.log(orgData);
+        this.Api.CreateOrg(orgData).then((savedOrg) => {
+            console.log('saved the org');
+            console.log(savedOrg);
+            let attrs = this.currentUser.attributes;
+            attrs['custom:orgId'] = savedOrg.id;
+            this.amplify.auth().updateUserAttributes(this.currentUser, attrs).then((user) => {
+                if (user) {
+                    console.log('updated');
+                    this.router.navigate(['/']);
+                } else {
+                    // display error to user
+                }
+            })
         })
     }
 }

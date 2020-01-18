@@ -74,3 +74,72 @@ subscription OnDeleteClient(
     updatedAt
   }
 }
+subscription OnCreateOrg(
+  $id: String
+  $name: String
+  $address1: String
+  $address2: String
+  $city: String
+) {
+  onCreateOrg(
+    id: $id
+    name: $name
+    address1: $address1
+    address2: $address2
+    city: $city
+  ) {
+    id
+    name
+    address1
+    address2
+    city
+    state
+    zip
+  }
+}
+subscription OnUpdateOrg(
+  $id: String
+  $name: String
+  $address1: String
+  $address2: String
+  $city: String
+) {
+  onUpdateOrg(
+    id: $id
+    name: $name
+    address1: $address1
+    address2: $address2
+    city: $city
+  ) {
+    id
+    name
+    address1
+    address2
+    city
+    state
+    zip
+  }
+}
+subscription OnDeleteOrg(
+  $id: String
+  $name: String
+  $address1: String
+  $address2: String
+  $city: String
+) {
+  onDeleteOrg(
+    id: $id
+    name: $name
+    address1: $address1
+    address2: $address2
+    city: $city
+  ) {
+    id
+    name
+    address1
+    address2
+    city
+    state
+    zip
+  }
+}

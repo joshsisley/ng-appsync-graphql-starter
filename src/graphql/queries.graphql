@@ -32,3 +32,28 @@ query ListClients(
     nextToken
   }
 }
+query GetOrg($id: String!) {
+  getOrg(id: $id) {
+    id
+    name
+    address1
+    address2
+    city
+    state
+    zip
+  }
+}
+query ListOrgs($filter: TableOrgFilterInput, $limit: Int, $nextToken: String) {
+  listOrgs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      address1
+      address2
+      city
+      state
+      zip
+    }
+    nextToken
+  }
+}
