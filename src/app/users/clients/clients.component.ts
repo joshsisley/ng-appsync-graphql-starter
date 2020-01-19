@@ -18,16 +18,11 @@ export class ClientsComponent implements OnInit {
 
     getAllUsers() {
         this.api.ListClients().then(list => {
-            console.log('here is the list of clients');
-            console.log(list);
             this.clientList = list.items;
-            console.log(this.clientList);
         })
     }
 
     goToClient(clientData) {
-        console.log('is called');
-        console.log(clientData)
         this.router.navigate(['/users/profile', clientData.id])
     }
 }

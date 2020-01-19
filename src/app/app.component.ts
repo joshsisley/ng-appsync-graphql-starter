@@ -20,8 +20,6 @@ export class AppComponent {
       }
       this.isLoggedIn = isLoggedIn;
       this.amplifyService.auth().currentUserInfo().then((currentUser) => {
-        console.log('here is the current user');
-        console.log(currentUser);
         this.isRegistered = currentUser && currentUser.attributes['custom:orgId'] ? true : false;
       })
     });

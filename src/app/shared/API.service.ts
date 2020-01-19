@@ -33,7 +33,7 @@ export type DeleteClientInput = {
 };
 
 export type CreateOrgInput = {
-  id: string | null;
+  id: string;
   name: string;
   address1?: string | null;
   address2?: string | null;

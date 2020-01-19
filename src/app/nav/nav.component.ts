@@ -16,8 +16,6 @@ export class NavComponent {
   constructor(private amplifyService: AmplifyService, public router: Router, private modalService: NgbModal) {
     this.amplifyService.authStateChange$.subscribe(authState => {
       const isLoggedIn = authState.state === 'signedIn' || authState.state === 'confirmSignIn';
-      console.log(this.isLoggedIn);
-      console.log(isLoggedIn);
       if (this.isLoggedIn && !isLoggedIn) {
         router.navigate(['']);
       } else if (!this.isLoggedIn && isLoggedIn) {

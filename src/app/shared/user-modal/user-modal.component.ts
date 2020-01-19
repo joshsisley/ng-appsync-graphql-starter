@@ -27,12 +27,8 @@ export class UserModalComponent implements OnInit {
     }
 
     onSubmit(userData) {
-        console.log('here is the user data');
-        console.log(userData);
         this.api.CreateClient(userData).then(user => {
-            console.log('here is the user response');
-            console.log(user);
+            this.userForm.reset();
         })
-        this.userForm.reset();
     }
 }

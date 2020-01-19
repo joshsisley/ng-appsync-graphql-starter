@@ -12,8 +12,5 @@ export class ClientProfileComponent implements OnInit {
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit() { 
-        console.log('Loads the client info');
-        console.log(this.clientData);
-        console.log(this.route.snapshot.paramMap.get('id'))
     }
 }

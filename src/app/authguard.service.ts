@@ -8,7 +8,6 @@ export class UserAuthGuard implements CanActivate {
   constructor(private amplifyService: AmplifyService, private router: Router) { }
 
   canActivate() {
-    console.log('AuthGuard#canActivate called');
     return this.amplifyService.auth().currentUserInfo().then(user => {
         if (user.attributes['custom:orgId']) {
           return true;
